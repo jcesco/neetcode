@@ -17,10 +17,10 @@ def closeDuplicates(nums, k):
 
     for R in range(len(nums)):
         if R - L + 1 > k:
-            window.remove(nums[L])
-            L += 1
+            window.remove(nums[L])   # Remove left value from hashset
+            L += 1      # Increase left pointer by one
         if nums[R] in window:
             return True
-        window.add(nums[R])
+        window.add(nums[R])     # If right value not in hashset, add it to the hashset
 
     return False
